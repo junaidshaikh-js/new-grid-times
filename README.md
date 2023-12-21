@@ -1,6 +1,6 @@
 # New Grid Times — Module 7 workshop
 
-In this workshop, our goal is to build a sophisticated, responsive grid layout for an online newspaper, the New Grid Times:
+In this workshop, our goal is to build a sophisticated, responsive grid layout for an online newspaper, the New Grid Times
 
 ![Desktop-sized mockup](/docs/desktop-mockup.png)
 
