@@ -34,6 +34,16 @@ const Link = styled.a`
     padding-bottom: 16px;
     margin-bottom: 16px;
   }
+
+  @media (${QUERIES.tabletOnly}) {
+    flex: 1;
+
+    &:not(:last-child) {
+      border: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
 `
 
 const StoryDetailsWrapper = styled.div`
