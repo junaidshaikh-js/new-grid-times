@@ -1,23 +1,44 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { QUERIES } from '../../constants'
 
 const OpinionStory = ({ id, title, author, avatar }) => {
   return (
-    <a href={`/story/${id}`}>
+    <Link href={`/story/${id}`}>
       <Wrapper>
         <Avatar alt="" src={avatar} />
-        <div>
+        <StoryDetailsWrapper>
           <AuthorName>{author}</AuthorName>
           <ArticleTitle>{title}</ArticleTitle>
-        </div>
+        </StoryDetailsWrapper>
       </Wrapper>
-    </a>
-  );
-};
+    </Link>
+  )
+}
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
-`;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 16px;
+  justify-content: flex-end;
+
+  @media (${QUERIES.tabletOnly}) {
+    flex-direction: column;
+  }
+`
+
+const Link = styled.a`
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color-gray-300);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+`
+
+const StoryDetailsWrapper = styled.div`
+  margin-right: auto;
+`
 
 const Avatar = styled.img`
   display: block;
@@ -25,7 +46,7 @@ const Avatar = styled.img`
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
-`;
+`
 
 const AuthorName = styled.p`
   font-size: 1.125rem;
